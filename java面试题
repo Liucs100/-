@@ -1,0 +1,35 @@
+一、基础
+1、1995 年正式发布 JAVA
+2、OAK-JAVA 雏形，JAVA 发布之前用(语法借鉴 C++，思想借鉴 SMOLLTALK);
+3、1998 年,JAVA2 产生(JAVA 的最大特点：开源 OPEN);bea 公司 J2EE 正式应用火红
+4、JDK1.5(简称 Tigger)最新
+5、j2EE 表示层，业务层，数据层三大组成
+6、环境变量：JAVAHOME：JDK 的安装路径，
+ PATH：%JAVAHOME%\bin —虚拟机执行命令的路径
+ CLASSPATH:%JAVAHOME%\lib 字节码文件的路径，可用；号间隔多个选择路径
+ JBUILDER ORICAL 数据库，自带有 JDK1.4，有了 JBUILDER 可以不用安装 JDK；
+ ORICAL 数据库，自带有 JDK1.3,应把想要应用的 JDK 版本的路径写在环境变量的最前面.
+7、编译器：全部解释再执行 解释器：解释一条执行一条
+JAVA 程序是先编译后解释执行.
+8、系统垃圾收集是自动的，即使显示调用，也是由系统控制的；
+ (显示调用也不一定马上收集，还是由系统控制)(java.lang)System.gc();Runtime.getRuntime().gc();
+9、JVM 工作：类加载，字节码校验，解释器Æ成为机器能执行的机器语言
+二、简单程序
+1、源文件名一定要和 public 定义的类的类名一样；
+ 没有 public 类的话，源文件名可以随意；
+2、main()方法可以处于同意源文件中的不同类中;是 java 执行的入口；
+ Java 后面跟的是含有 main()方法的类的类名；java 根据类名进入不同入口；
+ 一个源文件中有多少类就有多少个.class 文件
+三、打包
+1、把源文件(字节码文件)打包到某个包中，使用 package 关键字，且一定是放在文件头，一定只有一句！；
+2、包名小写；
+3、使用打包后，java Hello.class 执行程序(注意顺序一定是：package-import-class,不能将其他东西插到中间)
+4. 强制打包:javac –d . Hello.java. 将在当前目录下生成 Hello.java 内声明的 package.
+四、帮助文档
+1、生成帮助文档：javadoc 包名.源文件名
+五、JAVA 的 JDK 分成 2 部分：JRE 和类库
+1、系统只要装了 JRE 就可以运行 JAVA 字节码程序（必须要是通过编译后）
+2、JAR 一般打包的是.class 文件;一般 jar 包双击后可以运行（包名.jar）；
+3、要运行的话要在清单文件中加：Main-Class: Hello
+4、JAR 打包：先用 jar cvf ~.jar Hollo.class(或包名)(是 Class 文件，不是 JAVA 文件)
+ 改.mf 文件：加 Main-Class: 包名.Hollo(运行的 Class 文件) 
